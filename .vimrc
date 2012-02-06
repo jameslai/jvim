@@ -8,6 +8,7 @@ syntax on
 filetype plugin indent on
 map <F2> :NERDTreeToggle<CR>
 let NERDTreeShowBookmarks=1
+let mapleader = ','
 
 set tabstop=4
 set shiftwidth=4

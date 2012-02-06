@@ -1,0 +1,11 @@
+# Ignore everything
+*
+
+# But not these files...
+!.vimrc
+!/.vim
+!/.vim/*
+!.gitignore
+
+# ...but do ignore those DS_Store files
+.DS_Store*
