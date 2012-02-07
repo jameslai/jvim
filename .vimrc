@@ -1,6 +1,7 @@
 filetype off
 set nocompatible
 set modelines=0
+set spell spelllang=en_us
 colorscheme molokai
 set guifont=Monaco:h13
 call pathogen#infect()
