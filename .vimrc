@@ -10,11 +10,11 @@ filetype plugin indent on
 map <F2> :NERDTreeToggle<CR>
 let NERDTreeShowBookmarks=1
 let mapleader = ','
+runtime macros/matchit.vim
 
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set expandtab
 set number
 set encoding=utf-8
 set scrolloff=3
@@ -40,3 +40,5 @@ set wrap
 set textwidth=70
 set formatoptions=qrn1
 set colorcolumn=85
+
+autocmd VimEnter * NERDTree
