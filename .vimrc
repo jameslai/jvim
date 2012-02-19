@@ -6,11 +6,11 @@ colorscheme molokai
 set guifont=Monaco:h13
 call pathogen#infect()
 syntax on
+filetype on
 filetype plugin indent on
 map <F2> :NERDTreeToggle<CR>
 let NERDTreeShowBookmarks=1
 let mapleader = ','
-runtime macros/matchit.vim
 
 set tabstop=4
 set shiftwidth=4
@@ -42,3 +42,8 @@ set formatoptions=qrn1
 set colorcolumn=85
 
 autocmd VimEnter * NERDTree
+
+inoremap (	()<Left>
+inoremap {	{}<Left>
+inoremap ()	()
+inoremap {} {}
