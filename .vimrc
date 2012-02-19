@@ -39,7 +39,6 @@ set showmatch
 set wrap
 set textwidth=70
 set formatoptions=qrn1
-set colorcolumn=85
 
 autocmd VimEnter * NERDTree
 
