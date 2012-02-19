@@ -46,3 +46,4 @@ inoremap (	()<Left>
 inoremap {	{}<Left>
 inoremap ()	()
 inoremap {} {}
+map <C-w> :BD<return>
