@@ -8,6 +8,7 @@
 !/.vim/**/*
 !/.vim/**/**
 !/.vim/**/**/**
+!/.vim/**/**/**/**
 !.gitignore
 
 # ...but do ignore those DS_Store files
