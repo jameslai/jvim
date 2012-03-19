@@ -2,10 +2,11 @@ filetype off
 set nocompatible
 set modelines=0
 set spell spelllang=en_us
-colorscheme molokai
+colorscheme solarized
+set background=dark
 set guifont=Monaco:h13
 call pathogen#infect()
-syntax on
+syntax enable
 filetype on
 filetype plugin indent on
 map <F2> :NERDTreeToggle<CR>
@@ -46,4 +47,8 @@ inoremap (	()<Left>
 inoremap {	{}<Left>
 inoremap ()	()
 inoremap {} {}
+inoremap ({ ({});<Left><Left><Left>
 map <C-w> :BD<return>
+nmap <F4> :w<CR>:make<CR>:cw<CR>
+
+autocmd FileType php noremap <C-L> :!php -l %<CR>
