@@ -13,9 +13,9 @@ map <F2> :NERDTreeToggle<CR>
 let NERDTreeShowBookmarks=1
 let mapleader = ','
 
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set number
 set encoding=utf-8
 set scrolloff=3
