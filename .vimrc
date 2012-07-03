@@ -20,6 +20,7 @@ set number
 set encoding=utf-8
 set scrolloff=3
 set autoindent
+set autochdir
 set showmode
 set showcmd
 set hidden
@@ -51,4 +52,3 @@ inoremap ({ ({});<Left><Left><Left>
 map <C-w> :BD<return>
 nmap <F4> :w<CR>:make<CR>:cw<CR>
 
-autocmd FileType php noremap <C-L> :!php -l %<CR>
