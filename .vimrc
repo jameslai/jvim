@@ -9,8 +9,6 @@ call pathogen#infect()
 syntax enable
 filetype on
 filetype plugin indent on
-map <F2> :NERDTreeToggle<CR>
-let NERDTreeShowBookmarks=1
 let mapleader = ','
 
 set tabstop=2
@@ -42,8 +40,6 @@ set showmatch
 set wrap
 set textwidth=70
 set formatoptions=qrn1
-
-autocmd VimEnter * NERDTree
 
 inoremap (	()<Left>
 inoremap {	{}<Left>
