@@ -46,6 +46,5 @@ inoremap {	{}<Left>
 inoremap ()	()
 inoremap {} {}
 inoremap ({ ({});<Left><Left><Left>
-map <C-w> :BD<return>
 nmap <F4> :w<CR>:make<CR>:cw<CR>
 
