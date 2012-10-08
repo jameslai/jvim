@@ -46,30 +46,61 @@
 "
 "   let g:syntastic_cpp_compiler_options = ' -std=c++0x'
 "
+" Additionally the setting 'g:syntastic_cpp_config_file' allows you to define
+" a file that contains additional compiler arguments like include directories
+" or CFLAGS. The file is expected to contain one option per line. If none is
+" given the filename defaults to '.syntastic_cpp_config':
+"
+"   let g:syntastic_cpp_config_file = '.config'
+"
 " Using the global variable 'g:syntastic_cpp_remove_include_errors' you can
 " specify whether errors of files included via the
 " g:syntastic_cpp_include_dirs' setting are removed from the result set:
 "
 "   let g:syntastic_cpp_remove_include_errors = 1
+"
+" Use the variable 'g:syntastic_cpp_errorformat' to override the default error
+" format:
+"
+"   let g:syntastic_cpp_errorformat = '%f:%l:%c: %trror: %m'
+"
+" Set your compiler executable with e.g. (defaults to g++)
+"
+"   let g:syntastic_cpp_compiler = 'clang++'
 
 if exists('loaded_cpp_syntax_checker')
     finish
 endif
 let loaded_cpp_syntax_checker = 1
 
-if !executable('g++')
+if !exists('g:syntastic_cpp_compiler')
+    let g:syntastic_cpp_compiler = 'g++'
+endif
+
+if !exists('g:syntastic_cpp_compiler_options')
+    let g:syntastic_cpp_compiler_options = ''
+endif
+
+if !executable(g:syntastic_cpp_compiler)
     finish
 endif
 
 let s:save_cpo = &cpo
 set cpo&vim
 
-function! SyntaxCheckers_cpp_GetLocList()
-    let makeprg = 'g++ -fsyntax-only '
-    let errorformat =  '%-G%f:%s:,%f:%l:%c: %m,%f:%l: %m'
+if !exists('g:syntastic_cpp_config_file')
+    let g:syntastic_cpp_config_file = '.syntastic_cpp_config'
+endif
 
-    if exists('g:syntastic_cpp_compiler_options')
-        let makeprg .= g:syntastic_cpp_compiler_options
+function! SyntaxCheckers_cpp_GetLocList()
+    let makeprg = g:syntastic_cpp_compiler . ' -fsyntax-only ' .
+                \ g:syntastic_cpp_compiler_options
+    let errorformat =  '%-G%f:%s:,%f:%l:%c: %trror: %m,%f:%l:%c: %tarning: '.
+                \ '%m,%f:%l:%c: %m,%f:%l: %trror: %m,%f:%l: %tarning: %m,'.
+                \ '%f:%l: %m'
+
+    if exists('g:syntastic_cpp_errorformat')
+        let errorformat = g:syntastic_cpp_errorformat
     endif
 
     let makeprg .= ' ' . shellescape(expand('%')) .
@@ -77,7 +108,8 @@ function! SyntaxCheckers_cpp_GetLocList()
 
     if expand('%') =~? '\%(.h\|.hpp\|.hh\)$'
         if exists('g:syntastic_cpp_check_header')
-            let makeprg = 'g++ -c '.shellescape(expand('%')).
+            let makeprg = g:syntastic_cpp_compiler.' -c '.shellescape(expand('%')) .
+                        \ ' ' . g:syntastic_cpp_compiler_options .
                         \ ' ' . syntastic#c#GetIncludeDirs('cpp')
         else
             return []
@@ -100,6 +132,9 @@ function! SyntaxCheckers_cpp_GetLocList()
     else
         let makeprg .= b:syntastic_cpp_cflags
     endif
+
+    " add optional config file parameters
+    let makeprg .= ' ' . syntastic#c#ReadConfig(g:syntastic_cpp_config_file)
 
     " process makeprg
     let errors = SyntasticMake({ 'makeprg': makeprg,

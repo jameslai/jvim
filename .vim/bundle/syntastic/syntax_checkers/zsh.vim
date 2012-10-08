@@ -1,5 +1,5 @@
 "============================================================================
-"File:        html.vim
+"File:        zsh.vim
 "Description: Syntax checking plugin for syntastic.vim
 "Maintainer:  Martin Grenfell <martin.grenfell at gmail dot com>
 "License:     This program is free software. It comes without any warranty,
@@ -9,21 +9,18 @@
 "             See http://sam.zoy.org/wtfpl/COPYING for more details.
 "
 "============================================================================
-if exists("loaded_html_syntax_checker")
+if exists("loaded_zsh_syntax_checker")
     finish
 endif
-let loaded_html_syntax_checker = 1
+let loaded_zsh_syntax_checker = 1
 
-if !exists('g:syntastic_html_checker')
-    let g:syntastic_html_checker = "tidy"
+"bail if the user doesnt have zsh installed
+if !executable("zsh")
+    finish
 endif
 
-if g:syntastic_html_checker == "tidy"
-    if executable("tidy") && executable("grep")
-        runtime! syntax_checkers/html/tidy.vim
-    endif
-elseif g:syntastic_html_checker == "w3"
-    if executable("curl") && executable("sed")
-        runtime! syntax_checkers/html/w3.vim
-    endif
-endif
+function! SyntaxCheckers_zsh_GetLocList()
+    let makeprg = 'zsh -n ' . shellescape(expand('%'))
+    let errorformat = '%f:%l: %m'
+    return SyntasticMake({ 'makeprg': makeprg, 'errorformat': errorformat})
+endfunction
