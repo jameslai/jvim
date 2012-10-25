@@ -13,3 +13,6 @@
 [submodule "bundle/css3"]
 	path = bundle/css3
 	url = https://github.com/hail2u/vim-css3-syntax.git
+[submodule "bundle/javascript"]
+	path = bundle/javascript
+	url = https://github.com/pangloss/vim-javascript.git
