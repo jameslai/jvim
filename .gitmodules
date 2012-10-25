@@ -10,3 +10,6 @@
 [submodule "bundle/delimitMate"]
 	path = bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate
+[submodule "bundle/css3"]
+	path = bundle/css3
+	url = https://github.com/hail2u/vim-css3-syntax.git
