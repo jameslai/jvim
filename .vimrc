@@ -41,13 +41,3 @@ set wrap
 set textwidth=70
 set formatoptions=qrn1
 
-inoremap (	()<Left>
-inoremap {	{}<Left>
-inoremap "	""<Left>
-inoremap '	''<Left>
-inoremap ()	()
-inoremap {} {}
-inoremap "" ""
-inoremap '' ''
-inoremap ({ ({});<Left><Left><Left>
-nmap <F4> :w<CR>:make<CR>:cw<CR>
