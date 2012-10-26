@@ -19,3 +19,12 @@
 [submodule "bundle/html5"]
 	path = bundle/html5
 	url = https://github.com/othree/html5.vim.git
+[submodule "bundle/xml"]
+	path = bundle/xml
+	url = https://github.com/othree/xml.vim.git
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "bundle/nerdtreetabs"]
+	path = bundle/nerdtreetabs
+	url = https://github.com/jistr/vim-nerdtree-tabs.git

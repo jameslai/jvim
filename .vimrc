@@ -41,3 +41,5 @@ set wrap
 set textwidth=70
 set formatoptions=qrn1
 
+# Start with bookmarks displaying
+let NERDTreeShowBookmarks=1
