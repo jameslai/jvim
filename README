@@ -1,0 +1,3 @@
+To clone this repository which contains submodules, use:
+
+git clone --recursive <git_url>
