@@ -41,5 +41,11 @@ set wrap
 set textwidth=70
 set formatoptions=qrn1
 
-# Start with bookmarks displaying
+" Pluggin specific options
+" ----------------------------------------------------------------------------
+
+" Do syntax check when the buffer is first loaded
+let g:syntastic_check_on_open=1
+
+" Start with bookmarks displaying
 let NERDTreeShowBookmarks=1
