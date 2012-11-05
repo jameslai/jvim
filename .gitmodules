@@ -34,3 +34,6 @@
 [submodule "bundle/rooter"]
 	path = bundle/rooter
 	url = https://github.com/airblade/vim-rooter.git
+[submodule "bundle/repeat"]
+	path = bundle/repeat
+	url = https://github.com/tpope/vim-repeat.git
