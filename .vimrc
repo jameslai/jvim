@@ -41,6 +41,9 @@ set wrap
 set textwidth=70
 set formatoptions=qrn1
 
+" Prevent the creation of swp files, they're just a mess
+set noswapfile
+
 " Pluggin specific options
 " ----------------------------------------------------------------------------
 
