@@ -58,8 +58,8 @@ nnoremap <S-Tab> :bprevious<CR>
 
 set nobackup
 
-" Plugin specific options
-" ----------------------------------------------------------------------------
+" Prevent the creation of swp files, they're just a mess
+set noswapfile
 
 " Do syntax check when the buffer is first loaded
 let g:syntastic_check_on_open=1
