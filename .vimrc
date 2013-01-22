@@ -46,11 +46,20 @@ set wrap
 set textwidth=70
 set formatoptions=qrn1
 
-" Pluggin specific options
+map <c-f> <c-f>zz
+map <c-b> <c-b>zz
+map n nzz
+map N Nzz
+map j jzz
+map k kzz
+
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
+
+set nobackup
+
+" Plugin specific options
 " ----------------------------------------------------------------------------
 
 " Do syntax check when the buffer is first loaded
 let g:syntastic_check_on_open=1
-
-" Start with bookmarks displaying
-let NERDTreeShowBookmarks=1
