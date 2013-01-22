@@ -11,11 +11,16 @@ filetype on
 filetype plugin indent on
 let mapleader = ','
 
+" Tab rules
+set expandtab
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
+
+" Line number rules
 set number
 set rnu
+
 set encoding=utf-8
 set scrolloff=3
 set autoindent
