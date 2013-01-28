@@ -82,6 +82,7 @@ map n nzz
 map N Nzz
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
+map <Leader>o :CtrlPMixed<CR>
 
 " Prevent goofy backup files
 set nobackup
