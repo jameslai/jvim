@@ -19,6 +19,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-commentary'
 Bundle 'kien/ctrlp.vim'
+Bundle 'ervandew/supertab'
 
 " Syntax plugins
 Bundle 'hail2u/vim-css3-syntax'
@@ -26,6 +27,7 @@ Bundle 'othree/html5-syntax.vim'
 Bundle 'tpope/vim-markdown'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'tpope/vim-haml'
+Bundle 'jQuery'
 
 " Some kind of security thing
 set modelines=0
@@ -42,8 +44,10 @@ set background=dark
 " Set the default font
 set guifont=Monaco:h13
 
+" Enable syntax
 syntax enable
-filetype on
+
+" Automatically detect filetypes
 filetype plugin indent on
 
 " Set our mapleader key
