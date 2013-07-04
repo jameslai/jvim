@@ -8,15 +8,45 @@ call vundle#rc()
 " let Vundle manage Vundle
 " required! 
 Bundle 'gmarik/vundle'
+
+" Bundles
+Bundle 'vim-scripts/Align'
+Bundle 'Raimondi/delimitMate'
+Bundle 'tpope/vim-ragtag'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'airblade/vim-rooter'
+Bundle 'tpope/vim-surround'
+Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-commentary'
+Bundle 'kien/ctrlp.vim'
+
+" Syntax plugins
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'othree/html5-syntax.vim'
+Bundle 'tpope/vim-markdown'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'tpope/vim-haml'
+
+" Some kind of security thing
 set modelines=0
+
+" Default spelling language
 set spell spelllang=en_us
+
+" Set the colorscheme
 colorscheme solarized
+
+" Set the colorscheme to dark mode
 set background=dark
+
+" Set the default font
 set guifont=Monaco:h13
-call pathogen#infect()
+
 syntax enable
 filetype on
 filetype plugin indent on
+
+" Set our mapleader key
 let mapleader = ','
 
 " Tab rules
