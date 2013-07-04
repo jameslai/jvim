@@ -92,3 +92,8 @@ set noswapfile
 
 " Do syntax check when the buffer is first loaded
 let g:syntastic_check_on_open=1
+
+" Setup tagbar
+let g:tagbar_ctags_bin='/usr/local/bin/ctags'  " Proper Ctags locations
+let g:tagbar_width=26                          " Default is 40, seems too wide
+noremap <silent> <Leader>y :TagbarToggle 
