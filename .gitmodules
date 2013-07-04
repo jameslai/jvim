@@ -43,6 +43,9 @@
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
-[submodule "bundle/ectags"]
-	path = bundle/ectags
-	url = https://github.com/kokx/exuberant-ctags.git
+[submodule "bundle/matchit"]
+	path = bundle/matchit
+	url = https://github.com/edsono/vim-matchit.git
+[submodule "bundle/swapit"]
+	path = bundle/swapit
+	url = https://github.com/mjbrownie/swapit.git
