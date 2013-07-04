@@ -1,5 +1,13 @@
 filetype off
 set nocompatible
+
+" Vundle initialization
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
 set modelines=0
 set spell spelllang=en_us
 colorscheme solarized
