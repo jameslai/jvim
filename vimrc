@@ -20,6 +20,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-commentary'
 Bundle 'kien/ctrlp.vim'
 Bundle 'ervandew/supertab'
+Bundle 'tpope/vim-repeat'
 
 " Syntax plugins
 Bundle 'hail2u/vim-css3-syntax'
