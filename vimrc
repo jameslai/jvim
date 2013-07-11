@@ -28,6 +28,7 @@ Bundle 'othree/html5-syntax.vim'
 Bundle 'tpope/vim-markdown'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'tpope/vim-haml'
+Bundle 'puppetlabs/puppet-syntax-vim'
 Bundle 'jQuery'
 
 " Some kind of security thing
