@@ -22,6 +22,7 @@ Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-repeat'
 Bundle 'yaifa.vim'
 Bundle 'csscomb/CSScomb-for-Vim'
+Bundle 'mattn/zencoding-vim'
 
 " Syntax plugins
 Bundle 'hail2u/vim-css3-syntax'
