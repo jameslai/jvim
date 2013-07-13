@@ -12,7 +12,6 @@ Bundle 'gmarik/vundle'
 " Bundles
 Bundle 'vim-scripts/Align'
 Bundle 'Raimondi/delimitMate'
-Bundle 'tpope/vim-ragtag'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'airblade/vim-rooter'
 Bundle 'tpope/vim-surround'
