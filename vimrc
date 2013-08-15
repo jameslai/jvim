@@ -48,6 +48,12 @@ set background=dark
 " Set the default font
 set guifont=Monaco:h13
 
+" Hide the toolbar
+set guioptions-=T
+
+" Hide scrollbars
+set guioptions-=r
+
 " Enable syntax
 syntax enable
 
