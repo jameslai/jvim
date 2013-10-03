@@ -1,3 +1,5 @@
+" Need to call on initially to support git
+filetype on
 filetype off
 set nocompatible
 
