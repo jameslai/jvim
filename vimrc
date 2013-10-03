@@ -138,6 +138,8 @@ map N Nzz
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 map <Leader>o :CtrlPMixed<CR>
+noremap <c-]> :lnext<CR>
+noremap <c-[> :lprev<CR>
 
 " Prevent goofy backup files
 set nobackup
