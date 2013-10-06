@@ -76,6 +76,7 @@ set softtabstop=2
 set number
 set rnu
 
+" Set the default encoding to the always trusty UTF-8
 set encoding=utf-8
 
 " Always scroll to what we're searching for
