@@ -126,7 +126,9 @@ set incsearch
 " Visually display matching braces
 set showmatch
 
-set wrap
+" Don't wrap
+set nowrap
+
 set textwidth=70
 set formatoptions=qrn1
 
