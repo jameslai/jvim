@@ -57,6 +57,7 @@ set guioptions-=T
 
 " Hide scrollbars
 set guioptions-=r
+set go-=L
 
 " Enable syntax
 syntax enable
