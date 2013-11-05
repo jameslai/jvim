@@ -38,6 +38,9 @@ Bundle 'jQuery'
 Bundle 'groenewege/vim-less'
 Bundle 'jnwhiteh/vim-golang'
 
+" Ensure vim uses bash
+set shell=/bin/bash
+
 " Some kind of security thing
 set modelines=0
 
