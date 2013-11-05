@@ -35,6 +35,7 @@ Bundle 'jelera/vim-javascript-syntax'
 Bundle 'tpope/vim-haml'
 Bundle 'puppetlabs/puppet-syntax-vim'
 Bundle 'jQuery'
+Bundle 'groenewege/vim-less'
 
 " Some kind of security thing
 set modelines=0
