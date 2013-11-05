@@ -144,11 +144,16 @@ map <c-f> <c-f>zz
 map <c-b> <c-b>zz
 map n nzz
 map N Nzz
-nnoremap <Tab> :bnext<CR>
-nnoremap <S-Tab> :bprevious<CR>
+" Switching between buffers using Ctrl+Tab
+nnoremap <c-Tab> :bnext<CR>
+nnoremap <c-S-Tab> :bprevious<CR>
+
+" Switching between tabs using Shift+Tab
+nnoremap <Tab> :tabn<CR>
+nnoremap <S-Tab> :tabp<CR>
+
+" Searching using Ctrl+P
 map <Leader>o :CtrlPMixed<CR>
-noremap <c-]> :lnext<CR>
-noremap <c-[> :lprev<CR>
 
 " Prevent goofy backup files
 set nobackup
