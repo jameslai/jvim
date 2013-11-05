@@ -54,6 +54,9 @@ set guifont=Monaco:h13
 " Hide the toolbar
 set guioptions-=T
 
+" Automatically reload on file changes
+set autoread
+
 " Hide scrollbars
 set guioptions-=r
 set go-=L
