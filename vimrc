@@ -169,7 +169,7 @@ set noswapfile
 let g:syntastic_check_on_open=1
 
 " Don't overindent javascript
-g:SimpleJsIndenter_BriefMode=1"
+g:SimpleJsIndenter_BriefMode=1
 
 " Hide .DS_Store and .git directories from Vim
 let g:netrw_list_hide='.DS_Store,^\.git/$'
