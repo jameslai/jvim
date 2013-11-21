@@ -32,6 +32,7 @@ Bundle 'hail2u/vim-css3-syntax'
 Bundle 'othree/html5-syntax.vim'
 Bundle 'tpope/vim-markdown'
 Bundle 'jelera/vim-javascript-syntax'
+Bundle 'jiangmiao/simple-javascript-indenter'
 Bundle 'tpope/vim-haml'
 Bundle 'puppetlabs/puppet-syntax-vim'
 Bundle 'jQuery'
@@ -166,6 +167,9 @@ set noswapfile
 
 " Do syntax check when the buffer is first loaded
 let g:syntastic_check_on_open=1
+
+" Don't overindent javascript
+g:SimpleJsIndenter_BriefMode=1"
 
 " Hide .DS_Store and .git directories from Vim
 let g:netrw_list_hide='.DS_Store,^\.git/$'
