@@ -26,6 +26,7 @@ Bundle 'yaifa.vim'
 Bundle 'mattn/zencoding-vim'
 Bundle 'matchit.zip'
 Bundle 'amirh/HTML-AutoCloseTag'
+Bundle 'altercation/vim-colors-solarized'
 
 " Syntax plugins
 Bundle 'hail2u/vim-css3-syntax'
