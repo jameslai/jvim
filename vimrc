@@ -27,6 +27,7 @@ Bundle 'mattn/zencoding-vim'
 Bundle 'matchit.zip'
 Bundle 'amirh/HTML-AutoCloseTag'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'rking/ag.vim'
 
 " Syntax plugins
 Bundle 'hail2u/vim-css3-syntax'
@@ -161,6 +162,9 @@ nnoremap <S-Tab> :tabp<CR>
 " Searching using Ctrl+P
 map <Leader>o :CtrlPMixed<CR>
 
+" Disable Ex mode
+map Q <ESC>
+
 " Prevent goofy backup files
 set nobackup
 
@@ -175,3 +179,17 @@ let g:SimpleJsIndenter_BriefMode=1
 
 " Hide .DS_Store and .git directories from Vim
 let g:netrw_list_hide='.DS_Store,^\.git/$'
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+autocmd QuickFixCmdPost *grep* cwindow
