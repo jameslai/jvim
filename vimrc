@@ -20,14 +20,15 @@ Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-commentary'
 Bundle 'kien/ctrlp.vim'
-Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-repeat'
 Bundle 'yaifa.vim'
-Bundle 'mattn/zencoding-vim'
 Bundle 'matchit.zip'
 Bundle 'amirh/HTML-AutoCloseTag'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'rking/ag.vim'
+Bundle 'Shougo/neocomplcache.vim'
+Bundle 'majutsushi/tagbar'
+
 
 " Syntax plugins
 Bundle 'hail2u/vim-css3-syntax'
@@ -179,6 +180,9 @@ let g:SimpleJsIndenter_BriefMode=1
 
 " Hide .DS_Store and .git directories from Vim
 let g:netrw_list_hide='.DS_Store,^\.git/$'
+
+" Start neocompletecache automatically
+let g:neocomplcache_enable_at_startup = 1
 
 " The Silver Searcher
 if executable('ag')
