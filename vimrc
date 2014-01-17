@@ -197,3 +197,6 @@ if executable('ag')
 endif
 
 autocmd QuickFixCmdPost *grep* cwindow
+
+" Automatically format saved go files
+autocmd FileType go autocmd BufWritePre <buffer> Fmt"
