@@ -14,7 +14,7 @@ Bundle 'gmarik/vundle'
 " Bundles
 Bundle 'vim-scripts/Align'
 Bundle 'Raimondi/delimitMate'
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'bling/vim-airline'
 Bundle 'airblade/vim-rooter'
 Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/syntastic'
@@ -60,7 +60,7 @@ colorscheme solarized
 set background=dark
 
 " Set the default font
-set guifont=Monaco:h13
+set guifont=Monaco\ for\ Powerline:h13
 
 " Hide the toolbar
 set guioptions-=T
@@ -167,6 +167,9 @@ map <Leader>o :CtrlPMixed<CR>
 " Disable Ex mode
 map Q <ESC>
 
+" Allow slimline to use powerline fonts
+let g:airline_powerline_fonts = 1
+
 " Prevent goofy backup files
 set nobackup
 
@@ -201,3 +204,7 @@ autocmd QuickFixCmdPost *grep* cwindow
 
 " Automatically format saved go files
 autocmd FileType go autocmd BufWritePre <buffer> Fmt"
+
+" Show the quickfix window on TypeScript errors
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
