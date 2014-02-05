@@ -29,6 +29,7 @@ Bundle 'rking/ag.vim'
 Bundle 'Shougo/neocomplcache.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'leafgarland/typescript-vim'
+Bundle 'gregsexton/MatchTag'
 
 " Syntax plugins
 Bundle 'hail2u/vim-css3-syntax'
