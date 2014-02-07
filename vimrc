@@ -61,7 +61,7 @@ colorscheme solarized
 set background=dark
 
 " Set the default font
-set guifont=Monaco\ for\ Powerline:h13
+set guifont=Monaco:h13
 
 " Hide the toolbar
 set guioptions-=T
