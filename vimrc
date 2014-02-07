@@ -43,6 +43,7 @@ Bundle 'puppetlabs/puppet-syntax-vim'
 Bundle 'jQuery'
 Bundle 'groenewege/vim-less'
 Bundle 'jnwhiteh/vim-golang'
+Bundle 'evanmiller/nginx-vim-syntax'
 
 " Ensure vim uses bash
 set shell=/bin/bash
