@@ -203,8 +203,14 @@ endif
 
 autocmd QuickFixCmdPost *grep* cwindow
 
+" Syntastic shouldn't bother with HTML files
+let g:syntastic_ignore_files=['.html$']
+
 " Automatically format saved go files
 autocmd FileType go autocmd BufWritePre <buffer> Fmt"
+
+" Automatically open the error list when errors are detected
+let g:syntastic_auto_loc_list=1
 
 " Show the quickfix window on TypeScript errors
 autocmd QuickFixCmdPost [^l]* nested cwindow
