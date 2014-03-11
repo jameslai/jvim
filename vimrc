@@ -30,6 +30,7 @@ Bundle 'Shougo/neocomplcache.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'leafgarland/typescript-vim'
 Bundle 'gregsexton/MatchTag'
+Bundle 'terryma/vim-multiple-cursors'
 
 " Syntax plugins
 Bundle 'hail2u/vim-css3-syntax'
