@@ -81,7 +81,14 @@ syntax enable
 filetype plugin indent on
 
 " Set our mapleader key
-let mapleader = ','
+let mapleader = "\<Space>"
+
+" Save with an easy shortcut
+nnoremap <Leader>w :w<CR>
+
+" Copy & paste to the system clipboard with <leader>y||p
+vmap <leader>y "+y
+vmap <leader>p "+p
 
 " Tab rules
 set expandtab
