@@ -182,9 +182,6 @@ let g:SimpleJsIndenter_BriefMode=1
 " Hide .DS_Store and .git directories from Vim
 let g:netrw_list_hide='.DS_Store,^\.git/$'
 
-" Start neocompletecache automatically
-let g:neocomplcache_enable_at_startup = 1
-
 " The Silver Searcher
 if executable('ag')
   " Use ag over grep
