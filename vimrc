@@ -159,7 +159,7 @@ nnoremap <Tab> :tabn<CR>
 nnoremap <S-Tab> :tabp<CR>
 
 " Searching using Ctrl+P
-map <Leader>o :CtrlPMixed<CR>
+map <Leader>o :CtrlP<CR>
 
 " Disable Ex mode
 map Q <ESC>
