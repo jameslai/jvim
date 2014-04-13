@@ -26,7 +26,6 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'rking/ag.vim'
 Bundle 'leafgarland/typescript-vim'
 Bundle 'gregsexton/MatchTag'
-Bundle 'terryma/vim-multiple-cursors'
 
 " Syntax plugins
 Bundle 'hail2u/vim-css3-syntax'
