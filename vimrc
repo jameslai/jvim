@@ -74,6 +74,9 @@ let mapleader = "\<Space>"
 " Save with an easy shortcut
 nnoremap <Leader>w :w<CR>
 
+" Quit with an easy shortcut
+nnoremap <Leader>q :q<CR>
+
 " Copy & paste to the system clipboard with <leader>y||p
 vmap <leader>y "+y
 vmap <leader>p "+p
