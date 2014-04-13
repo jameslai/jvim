@@ -153,9 +153,6 @@ map <c-f> <c-f>zz
 map <c-b> <c-b>zz
 map n nzz
 map N Nzz
-" Switching between buffers using Ctrl+Tab
-nnoremap <c-Tab> :bnext<CR>
-nnoremap <c-S-Tab> :bprevious<CR>
 
 " Switching between tabs using Shift+Tab
 nnoremap <Tab> :tabn<CR>
