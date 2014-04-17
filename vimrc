@@ -19,6 +19,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-commentary'
 Bundle 'kien/ctrlp.vim'
+Bundle 'airblade/vim-rooter'
 Bundle 'tpope/vim-repeat'
 Bundle 'yaifa.vim'
 Bundle 'matchit.zip'
@@ -30,6 +31,7 @@ Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle "honza/vim-snippets"
+Bundle 'Shougo/neocomplete'
 
 " Syntax plugins
 Bundle 'hail2u/vim-css3-syntax'
@@ -161,17 +163,23 @@ nnoremap <S-Tab> :tabp<CR>
 " Searching using Ctrl+P
 map <Leader>o :CtrlP<CR>
 
+" Search in project
+map <Leader>f :Ag! 
+
 " Disable Ex mode
 map Q <ESC>
 
 " Allow slimline to use powerline fonts
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts=1
 
 " Prevent goofy backup files
 set nobackup
 
 " Prevent the creation of swp files, they're just a mess
 set noswapfile
+
+" Expand delimitmate
+let delimitMate_expand_cr=1
 
 " Do syntax check when the buffer is first loaded
 let g:syntastic_check_on_open=1
@@ -188,10 +196,10 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_user_command='ag %s -l --nocolor -g ""'
 
   " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
+  let g:ctrlp_use_caching=0
 endif
 
 autocmd QuickFixCmdPost *grep* cwindow
@@ -208,3 +216,17 @@ let g:syntastic_auto_loc_list=1
 " Show the quickfix window on TypeScript errors
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
+
+" Neocomplete configuration
+
+" Use neocomplete.
+let g:neocomplete#enable_at_startup=1
+
+" Use smartcase.
+let g:neocomplete#enable_smart_case=1
+
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>""
+
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length=3
