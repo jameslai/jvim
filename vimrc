@@ -128,6 +128,11 @@ set backspace=indent,eol,start
 " Always show the status line
 set laststatus=2
 
+" Fasting escaping out of insert mode
+set ttimeout
+set ttimeoutlen=100
+set timeoutlen=3000
+
 " Highlight search results
 set hlsearch
 
