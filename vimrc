@@ -91,7 +91,10 @@ set softtabstop=2
 
 " Line number rules
 set number
-set rnu
+
+if exists('+relativenumber')
+  set rnu
+endif
 
 " Set the default encoding to the always trusty UTF-8
 set encoding=utf-8
