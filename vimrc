@@ -94,6 +94,8 @@ set number
 
 if exists('+relativenumber')
   set rnu
+else
+  set nu
 endif
 
 " Set the default encoding to the always trusty UTF-8
