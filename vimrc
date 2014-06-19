@@ -9,7 +9,7 @@ call vundle#rc()
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/vundle'
+Bundle 'gmarik/vundle.vim'
 
 " Bundles
 Bundle 'vim-scripts/Align'
