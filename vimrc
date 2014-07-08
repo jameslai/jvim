@@ -202,6 +202,7 @@ set noswapfile
 
 " Expand delimitmate
 let delimitMate_expand_cr=1
+let delimitMate_expand_space=1
 
 " Do syntax check when the buffer is first loaded
 let g:syntastic_check_on_open=1
