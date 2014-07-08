@@ -157,7 +157,6 @@ set showmatch
 " Don't wrap
 set nowrap
 
-set textwidth=70
 set formatoptions=qrn1
 
 " Handy key remaps
