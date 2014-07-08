@@ -173,8 +173,20 @@ nnoremap <S-Tab> :tabp<CR>
 " Searching using Ctrl+P
 map <Leader>o :CtrlP<CR>
 
+" Quick netew
+map <Leader>t :Tex<CR>
+map <Leader>e :Exp<CR>
+map <Leader>v :Vex<CR>
+
+" Quick source
+map <Leader>s :so $MYVIMRC<CR>
+
 " Search in project
 map <Leader>f :Ag! 
+
+" Add a semicolon to the end of the line
+inoremap <Leader>; <C-o>A;
+nnoremap <Leader>; A;<esc>;
 
 " Disable Ex mode
 map Q <ESC>
