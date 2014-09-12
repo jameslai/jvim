@@ -1,7 +1,10 @@
+if $SHELL =~ 'fish'
+  set shell='/bin/sh'
+endif
+
 " Need to call on initially to support git
-filetype on
-filetype off
 set nocompatible
+filetype off
 
 " Vundle initialization
 set rtp+=~/.vim/bundle/vundle/
@@ -22,11 +25,12 @@ Bundle 'airblade/vim-rooter'
 Bundle 'tpope/vim-repeat'
 Bundle 'yaifa.vim'
 Bundle 'matchit.zip'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'rking/ag.vim'
 Bundle 'leafgarland/typescript-vim'
-Bundle 'gregsexton/MatchTag'
-Bundle 'Shougo/neocomplete'
+Bundle 'fatih/vim-go'
+
+" Colorschemes
+Bundle 'altercation/vim-colors-solarized'
 
 " Syntax plugins
 Bundle 'hail2u/vim-css3-syntax'
@@ -161,8 +165,9 @@ map n nzz
 map N Nzz
 
 " Switching between tabs using Shift+Tab
-nnoremap <Tab> :tabn<CR>
+nnoremap <Tab>   :tabn<CR>
 nnoremap <S-Tab> :tabp<CR>
+nnoremap <C-t>     :tabnew<CR>
 
 " Searching using Ctrl+P
 map <Leader>o :CtrlP<CR>
@@ -225,7 +230,7 @@ autocmd QuickFixCmdPost *grep* cwindow
 let g:syntastic_ignore_files=['.html$']
 
 " Automatically format saved go files
-autocmd FileType go autocmd BufWritePre <buffer> Fmt"
+" autocmd FileType go autocmd BufWritePre <buffer> Fmt"
 
 " Automatically open the error list when errors are detected
 let g:syntastic_auto_loc_list=1
@@ -233,17 +238,3 @@ let g:syntastic_auto_loc_list=1
 " Show the quickfix window on TypeScript errors
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
-
-" Neocomplete configuration
-
-" Use neocomplete.
-let g:neocomplete#enable_at_startup=1
-
-" Use smartcase.
-let g:neocomplete#enable_smart_case=1
-
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>""
-
-" Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length=3
