@@ -165,20 +165,34 @@ map n nzz
 map N Nzz
 
 " Switching between tabs using Shift+Tab
-nnoremap <Tab>   :tabn<CR>
-nnoremap <S-Tab> :tabp<CR>
-nnoremap <C-t>     :tabnew<CR>
+nnoremap <Leader>] :tabn<CR>
+nnoremap <Leader>[ :tabp<CR>
+nnoremap <Leader>1 1gt<CR>
+nnoremap <Leader>2 2gt<CR>
+nnoremap <Leader>3 3gt<CR>
+nnoremap <Leader>4 4gt<CR>
+nnoremap <Leader>5 5gt<CR>
+nnoremap <Leader>6 6gt<CR>
+nnoremap <Leader>7 7gt<CR>
+nnoremap <Leader>8 8gt<CR>
+nnoremap <Leader>9 9gt<CR>
+nnoremap <Leader>0 :tablast<CR>
+
 
 " Searching using Ctrl+P
-map <Leader>o :CtrlP<CR>
+map <Leader>o :CtrlPMixed<CR>
 
-" Quick netew
+" Quick netrw
 map <Leader>t :Tex<CR>
 map <Leader>e :Exp<CR>
 map <Leader>v :Vex<CR>
+map <Leader>s :Sex<CR>
 
-" Quick source
-map <Leader>s :so $MYVIMRC<CR>
+" Netrw settings
+let g:netrw_liststyle=3
+
+" Quick refresh
+map <Leader>r :so $MYVIMRC<CR>
 
 " Search in project
 map <Leader>f :Ag! 
@@ -198,6 +212,9 @@ set nobackup
 
 " Prevent the creation of swp files, they're just a mess
 set noswapfile
+
+" Prevent double save
+set nowritebackup
 
 " Expand delimitmate
 let delimitMate_expand_cr=1
