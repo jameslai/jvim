@@ -178,6 +178,10 @@ nnoremap <Leader>8 8gt<CR>
 nnoremap <Leader>9 9gt<CR>
 nnoremap <Leader>0 :tablast<CR>
 
+" Jumping around errors
+let g:syntastic_always_populate_loc_list = 1
+noremap [ :lprev<CR>
+noremap ] :lnext<CR>
 
 " Searching using Ctrl+P
 map <Leader>o :CtrlPMixed<CR>
