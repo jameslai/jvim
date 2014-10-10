@@ -51,6 +51,7 @@ set shell=/bin/bash
 " Some kind of security thing
 set modelines=0
 
+
 " Default spelling language
 set spell spelllang=en_us
 
@@ -202,8 +203,8 @@ map <Leader>r :so $MYVIMRC<CR>
 map <Leader>f :Ag! 
 
 " Add a semicolon to the end of the line
-inoremap <Leader>; <C-o>A;
-nnoremap <Leader>; A;<esc>;
+" nnoremap <Leader>; <C-o>A;
+" nnoremap <Leader>; A;<esc>;
 
 " Disable Ex mode
 map Q <ESC>
