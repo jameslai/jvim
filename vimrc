@@ -203,6 +203,9 @@ map <Leader>r :so $MYVIMRC<CR>
 " Search in project
 map <Leader>f :Ag! 
 
+" Search the project for the word under cursor
+map <Leader>F :Ag!<C-r><C-w><CR>
+
 " Add a semicolon to the end of the line
 " nnoremap <Leader>; <C-o>A;
 " nnoremap <Leader>; A;<esc>;
