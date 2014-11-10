@@ -28,6 +28,7 @@ Bundle 'matchit.zip'
 Bundle 'rking/ag.vim'
 Bundle 'leafgarland/typescript-vim'
 Bundle 'fatih/vim-go'
+Bundle 'Shougo/unite.vim'
 
 " Colorschemes
 Bundle 'altercation/vim-colors-solarized'
@@ -245,6 +246,9 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching=0
 endif
+
+let g:ctrlp_cmd = 'CtrlPLastMode'
+let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
 
 autocmd QuickFixCmdPost *grep* cwindow
 
