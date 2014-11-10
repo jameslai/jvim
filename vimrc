@@ -90,6 +90,10 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 
+" Show tabs
+set list
+set listchars=tab:▸\ 
+
 " Line number rules
 set number
 
