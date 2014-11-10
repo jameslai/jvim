@@ -267,7 +267,10 @@ let g:syntastic_ignore_files=['.html$']
 " autocmd FileType go autocmd BufWritePre <buffer> Fmt"
 
 " Automatically open the error list when errors are detected
-let g:syntastic_auto_loc_list=1
+
+if !&diff
+  let g:syntastic_auto_loc_list=1
+endif
 
 " Show the quickfix window on TypeScript errors
 autocmd QuickFixCmdPost [^l]* nested cwindow
