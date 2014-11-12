@@ -29,7 +29,6 @@ Bundle 'matchit.zip'
 Bundle 'rking/ag.vim'
 Bundle 'leafgarland/typescript-vim'
 Bundle 'fatih/vim-go'
-Bundle 'Shougo/unite.vim'
 
 " Colorschemes
 Bundle 'altercation/vim-colors-solarized'
