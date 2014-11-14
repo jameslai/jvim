@@ -255,6 +255,9 @@ let g:SimpleJsIndenter_BriefMode=1
 " Hide .DS_Store and .git directories from Vim
 let g:netrw_list_hide='.DS_Store,^\.git/$'
 
+" Set the working directory to the nearest ancestor .git directory
+let g:ctrlp_working_path_mode = 'ra'
+
 " The Silver Searcher
 if executable('ag')
   " Use ag over grep
