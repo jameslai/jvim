@@ -29,6 +29,7 @@ Bundle 'matchit.zip'
 Bundle 'rking/ag.vim'
 Bundle 'leafgarland/typescript-vim'
 Bundle 'fatih/vim-go'
+Bundle 'junegunn/vim-easy-align'
 
 " Colorschemes
 Bundle 'altercation/vim-colors-solarized'
@@ -73,6 +74,12 @@ filetype plugin indent on
 
 " Set our mapleader key
 let mapleader = "\<Space>"
+
+" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+vmap <Enter> <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
+nmap <Leader>a <Plug>(EasyAlign)
 
 " Save with an easy shortcut
 nnoremap <Leader>w :w<CR>
