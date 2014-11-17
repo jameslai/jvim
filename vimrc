@@ -30,9 +30,15 @@ Bundle 'rking/ag.vim'
 Bundle 'leafgarland/typescript-vim'
 Bundle 'fatih/vim-go'
 Bundle 'junegunn/vim-easy-align'
+Bundle 'kshenoy/vim-signature'
+Bundle 'airblade/vim-gitgutter'
 
 " Colorschemes
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'tomasr/molokai'
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'hukl/Smyck-Color-Scheme'
+Bundle 'morhetz/gruvbox'
 
 " Syntax plugins
 Bundle 'hail2u/vim-css3-syntax'
