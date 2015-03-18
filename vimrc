@@ -21,10 +21,8 @@ Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-commentary'
 Bundle 'kien/ctrlp.vim'
-Bundle 'airblade/vim-rooter'
+" Bundle 'airblade/vim-rooter'
 Bundle 'tpope/vim-repeat'
-" Bundle 'tpope/vim-sleuth'
-Bundle 'Valloric/YouCompleteMe'
 Bundle 'matchit.zip'
 Bundle 'rking/ag.vim'
 Bundle 'leafgarland/typescript-vim'
@@ -32,13 +30,12 @@ Bundle 'fatih/vim-go'
 Bundle 'junegunn/vim-easy-align'
 Bundle 'kshenoy/vim-signature'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'tpope/vim-fugitive'
+Bundle 'ervandew/supertab'
+Bundle 'sjl/gundo.vim'
 
 " Colorschemes
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'tomasr/molokai'
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'hukl/Smyck-Color-Scheme'
-Bundle 'morhetz/gruvbox'
 
 " Syntax plugins
 Bundle 'hail2u/vim-css3-syntax'
@@ -47,7 +44,6 @@ Bundle 'tpope/vim-markdown'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'jiangmiao/simple-javascript-indenter'
-Bundle 'puppetlabs/puppet-syntax-vim'
 Bundle 'jQuery'
 Bundle 'groenewege/vim-less'
 Bundle 'jnwhiteh/vim-golang'
@@ -211,9 +207,6 @@ map <Leader>e :Exp<CR>
 map <Leader>v :Vex<CR>
 map <Leader>s :Sex<CR>
 
-" Netrw settings
-let g:netrw_liststyle=3
-
 " Quick refresh
 map <Leader>r :so $MYVIMRC<CR>
 
@@ -286,6 +279,7 @@ let g:syntastic_ignore_files=['.html$']
 if !&diff
   let g:syntastic_auto_loc_list=1
 endif
+
 
 " Show the quickfix window on TypeScript errors
 autocmd QuickFixCmdPost [^l]* nested cwindow
