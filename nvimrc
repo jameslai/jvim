@@ -246,44 +246,22 @@ let g:netrw_list_hide='.DS_Store,^\.git/$'
 " Set the working directory to the nearest ancestor .git directory
 let g:ctrlp_working_path_mode = 'ra'
 
-" The Silver Searcher
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command='ag %s -l -i --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching=0
-endif
-
+" Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+let g:ctrlp_user_command='ag %s -l -i --nocolor -g ""'
+let g:ctrlp_use_caching = 0
 let g:ctrlp_cmd = 'CtrlPLastMode'
 let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
 
-" autocmd QuickFixCmdPost *grep* cwindow
-
-" Syntastic shouldn't bother with HTML files
-" let g:syntastic_ignore_files=['.html$']
-
-" Automatically format saved go files
-" autocmd FileType go autocmd BufWritePre <buffer> Fmt"
-
-" Automatically open the error list when errors are detected
-
-" if !&diff
-"   let g:syntastic_auto_loc_list=1
-" endif
-
 " Check syntax on save
 autocmd! BufWritePost * Neomake
-
-" Show the quickfix window on errors
-autocmd QuickFixCmdPost [^l]* nested lwindow
-autocmd QuickFixCmdPost    l* nested lwindow
 
 autocmd BufRead * RainbowParentheses
 
 command Tex :tabnew | :FileBeagle
 command Sex :split | :FileBeagle
 command Vex :vsplit | :FileBeagle
+command Exp :FileBeagle
+
+" Open vertical splits to the right by default
+set splitbelow
+set splitright
