@@ -1,6 +1,5 @@
 .netrwbook
 .netrwhist
 .DS_Store
-bundle/*
-!bundle/vundle
+plugged
 spell/*

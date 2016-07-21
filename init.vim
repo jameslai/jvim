@@ -4,51 +4,48 @@ set shell='/bin/bash'
 set nocompatible
 filetype off
 
-" Vundle initialization
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
+call plug#begin('~/.vim/plugged')
 
 " Bundles
-Bundle 'Raimondi/delimitMate'
-Bundle 'bling/vim-airline'
-Bundle 'tpope/vim-surround'
-Bundle 'benekastah/neomake'
-Bundle 'tpope/vim-commentary'
-Bundle 'ctrlpvim/ctrlp.vim'
-Bundle 'tpope/vim-repeat'
-Bundle 'matchit.zip'
-Bundle 'fatih/vim-go'
-Bundle 'junegunn/vim-easy-align'
-Bundle 'kshenoy/vim-signature'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'tpope/vim-fugitive'
-Bundle 'jeetsukumaran/vim-filebeagle'
-Bundle 'junegunn/rainbow_parentheses.vim'
-Bundle 'junegunn/vim-peekaboo'
-Bundle 'marijnh/tern_for_vim'
-Bundle 'Valloric/YouCompleteMe'
+Plug 'Raimondi/delimitMate'
+Plug 'bling/vim-airline'
+Plug 'tpope/vim-surround'
+Plug 'benekastah/neomake'
+Plug 'tpope/vim-commentary'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-repeat'
+Plug 'matchit.zip'
+Plug 'fatih/vim-go'
+Plug 'junegunn/vim-easy-align'
+Plug 'kshenoy/vim-signature'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'jeetsukumaran/vim-filebeagle'
+Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'junegunn/vim-peekaboo'
+Plug 'marijnh/tern_for_vim'
+Plug 'Valloric/YouCompleteMe'
 
 " Colorschemes
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'goatslacker/mango.vim'
-Bundle 'rakr/vim-two-firewatch'
+Plug 'altercation/vim-colors-solarized'
+Plug 'goatslacker/mango.vim'
+Plug 'rakr/vim-two-firewatch'
 
 " Syntax plugins
-Bundle 'hail2u/vim-css3-syntax'
-Bundle 'othree/html5-syntax.vim'
-Bundle 'tpope/vim-markdown'
-Bundle 'othree/yajs.vim'
-Bundle 'othree/javascript-libraries-syntax.vim'
-Bundle 'jiangmiao/simple-javascript-indenter'
-Bundle 'jQuery'
-Bundle 'groenewege/vim-less'
-Bundle 'jnwhiteh/vim-golang'
-Bundle 'evanmiller/nginx-vim-syntax'
-Bundle 'mxw/vim-jsx'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'othree/html5-syntax.vim'
+Plug 'tpope/vim-markdown'
+Plug 'othree/yajs.vim'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'jiangmiao/simple-javascript-indenter'
+Plug 'jQuery'
+Plug 'groenewege/vim-less'
+Plug 'jnwhiteh/vim-golang'
+Plug 'evanmiller/nginx-vim-syntax'
+Plug 'mxw/vim-jsx'
+
+" Add plugins to &runtimepath
+call plug#end()
 
 " Some kind of security thing
 set modelines=0
@@ -248,7 +245,8 @@ let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
 " Check syntax on save
 autocmd BufWritePost * Neomake
 
-" let g:neomake_javascript_enabled_makers = ['eslint']
+" Open the error list automatically
+let g:neomake_open_list = 2
 
 autocmd BufRead * RainbowParentheses
 
