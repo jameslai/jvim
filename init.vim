@@ -15,32 +15,28 @@ Plug 'tpope/vim-commentary'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-repeat'
 Plug 'matchit.zip'
-Plug 'fatih/vim-go'
 Plug 'junegunn/vim-easy-align'
 Plug 'kshenoy/vim-signature'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'jeetsukumaran/vim-filebeagle'
-Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'junegunn/vim-peekaboo'
 Plug 'marijnh/tern_for_vim'
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'gabesoft/vim-ags'
 
 " Colorschemes
-Plug 'altercation/vim-colors-solarized'
-Plug 'goatslacker/mango.vim'
+Plug 'flazz/vim-colorschemes'
 Plug 'rakr/vim-two-firewatch'
 
 " Syntax plugins
 Plug 'hail2u/vim-css3-syntax'
 Plug 'othree/html5-syntax.vim'
-Plug 'tpope/vim-markdown'
-Plug 'othree/yajs.vim'
+Plug 'tpope/vim-markdown', { 'for': 'md' }
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'jiangmiao/simple-javascript-indenter'
-Plug 'jQuery'
-Plug 'groenewege/vim-less'
-Plug 'jnwhiteh/vim-golang'
+Plug 'groenewege/vim-less', { 'for': 'less' }
+Plug 'jnwhiteh/vim-golang', { 'for': 'go' }
 Plug 'evanmiller/nginx-vim-syntax'
 Plug 'mxw/vim-jsx'
 
@@ -50,8 +46,14 @@ call plug#end()
 " Some kind of security thing
 set modelines=0
 
+" Declare which JS libs we want syntax highlighting for
+let g:used_javascript_libs = "underscore,backbone,react,jquery,requirejs,handlebars"
+
 " Default spelling language
 set spell spelllang=en_us
+
+" Use true colors
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " Set the colorscheme
 colorscheme solarized
@@ -92,10 +94,6 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-
-" Show tabs
-set list
-set listchars=tab:▸\ 
 
 " Line number rules
 set number
@@ -247,8 +245,6 @@ autocmd BufWritePost * Neomake
 
 " Open the error list automatically
 let g:neomake_open_list = 2
-
-autocmd BufRead * RainbowParentheses
 
 command! Tex :tabnew | :FileBeagle
 command! Sex :split | :FileBeagle
