@@ -1,6 +1,4 @@
-if $SHELL =~ 'fish'
-  set shell='/bin/sh'
-endif
+set shell='/bin/bash'
 
 " Need to call on initially to support git
 set nocompatible
@@ -11,7 +9,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
 
 " Bundles
@@ -23,40 +21,37 @@ Bundle 'tpope/vim-commentary'
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'tpope/vim-repeat'
 Bundle 'matchit.zip'
-Bundle 'rking/ag.vim'
 Bundle 'fatih/vim-go'
 Bundle 'junegunn/vim-easy-align'
 Bundle 'kshenoy/vim-signature'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'tpope/vim-fugitive'
-Bundle 'ervandew/supertab'
-Bundle 'mattn/emmet-vim'
 Bundle 'jeetsukumaran/vim-filebeagle'
 Bundle 'junegunn/rainbow_parentheses.vim'
 Bundle 'junegunn/vim-peekaboo'
-Bundle 'skammer/vim-css-color'
+Bundle 'marijnh/tern_for_vim'
+Bundle 'Valloric/YouCompleteMe'
 
 " Colorschemes
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'goatslacker/mango.vim'
+Bundle 'rakr/vim-two-firewatch'
 
 " Syntax plugins
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'othree/html5-syntax.vim'
 Bundle 'tpope/vim-markdown'
-Bundle 'jelera/vim-javascript-syntax'
+Bundle 'othree/yajs.vim'
 Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'jiangmiao/simple-javascript-indenter'
 Bundle 'jQuery'
 Bundle 'groenewege/vim-less'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'evanmiller/nginx-vim-syntax'
-
-" Ensure vim uses bash
-set shell=/bin/bash
+Bundle 'mxw/vim-jsx'
 
 " Some kind of security thing
 set modelines=0
-
 
 " Default spelling language
 set spell spelllang=en_us
@@ -113,9 +108,6 @@ if exists('+relativenumber')
 else
   set nu
 endif
-
-" Set the default encoding to the always trusty UTF-8
-set encoding=utf-8
 
 " Always scroll to what we're searching for
 set scrolloff=3
@@ -204,10 +196,10 @@ noremap ] :lnext<CR>
 map <Leader>o :CtrlPMixed<CR>
 
 " Quick netrw
-map <Leader>t :tabnew | :FileBeagle<CR>
-map <Leader>e :FileBeagle<CR>
-map <Leader>v :vsplit | :FileBeagle<CR>
-map <Leader>s :split | :FileBeagle<CR>
+map <Leader>t :Tex<CR>
+map <Leader>e :Exp<CR>
+map <Leader>v :Vex<CR>
+map <Leader>s :Sex<CR>
 
 " Quick refresh
 map <Leader>r :so $MYVIMRC<CR>
@@ -254,15 +246,45 @@ let g:ctrlp_cmd = 'CtrlPLastMode'
 let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
 
 " Check syntax on save
-autocmd! BufWritePost * Neomake
+autocmd BufWritePost * Neomake
+
+" let g:neomake_javascript_enabled_makers = ['eslint']
 
 autocmd BufRead * RainbowParentheses
 
-command Tex :tabnew | :FileBeagle
-command Sex :split | :FileBeagle
-command Vex :vsplit | :FileBeagle
-command Exp :FileBeagle
+command! Tex :tabnew | :FileBeagle
+command! Sex :split | :FileBeagle
+command! Vex :vsplit | :FileBeagle
+command! Exp :FileBeagle
 
 " Open vertical splits to the right by default
 set splitbelow
 set splitright
+
+" More natural split navigation
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+nnoremap <c-h> <c-w>h
+
+" Statusline customization
+let g:airline_section_b = ''
+let g:airline_section_y = ''
+let g:airline_section_z = ''
+
+" fugitive git bindings
+nnoremap <leader>ga :Git add %:p<CR><CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gc :Gcommit -v -q<CR>
+nnoremap <leader>gt :Gcommit -v -q %:p<CR>
+nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>ge :Gedit<CR>
+nnoremap <leader>gr :Gread<CR>
+nnoremap <leader>gw :Gwrite<CR><CR>
+nnoremap <leader>gl :silent! Glog<CR>:bot copen<CR>
+nnoremap <leader>gp :Ggrep<Space>
+nnoremap <leader>gm :Gmove<Space>
+nnoremap <leader>gb :Git branch<Space>
+nnoremap <leader>go :Git checkout<Space>
+nnoremap <leader>gps :Dispatch! git push<CR>
+nnoremap <leader>gpl :Dispatch! git pull<CR>
