@@ -41,6 +41,7 @@ Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'jnwhiteh/vim-golang', { 'for': 'go' }
 Plug 'evanmiller/nginx-vim-syntax'
 Plug 'mxw/vim-jsx'
+Plug 'digitaltoad/vim-pug'
 
 " Add plugins to &runtimepath
 call plug#end()
