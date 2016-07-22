@@ -27,6 +27,7 @@ Plug 'gabesoft/vim-ags'
 " Colorschemes
 Plug 'flazz/vim-colorschemes'
 Plug 'rakr/vim-two-firewatch'
+Plug 'vim-airline/vim-airline-themes'
 
 " Syntax plugins
 Plug 'hail2u/vim-css3-syntax'
@@ -57,6 +58,9 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " Set the colorscheme
 colorscheme solarized
+
+" Airline theme
+let g:airline_theme='solarized'
 
 " Set the colorscheme to dark mode
 set background=dark
