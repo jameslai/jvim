@@ -1,9 +1,5 @@
 set shell=/bin/bash
 
-" Need to call on initially to support git
-set nocompatible
-filetype off
-
 call plug#begin('~/.vim/plugged')
 
 " Bundles
@@ -19,15 +15,14 @@ Plug 'kshenoy/vim-signature'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'jeetsukumaran/vim-filebeagle'
-Plug 'marijnh/tern_for_vim'
+Plug 'marijnh/tern_for_vim', { 'do': '/usr/local/bin/npm install' }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'gabesoft/vim-ags'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
 " Colorschemes
-Plug 'flazz/vim-colorschemes'
-Plug 'rakr/vim-two-firewatch'
+Plug 'frankier/neovim-colors-solarized-truecolor-only'
 Plug 'vim-airline/vim-airline-themes'
 
 " Syntax plugins
@@ -72,9 +67,6 @@ set autoread
 
 " Enable syntax
 syntax enable
-
-" Automatically detect filetypes
-filetype plugin indent on
 
 " Set our mapleader key
 let mapleader = "\<Space>"
