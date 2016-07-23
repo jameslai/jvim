@@ -1,4 +1,4 @@
-set shell='/bin/bash'
+set shell=/bin/bash
 
 " Need to call on initially to support git
 set nocompatible
@@ -12,7 +12,6 @@ Plug 'bling/vim-airline'
 Plug 'tpope/vim-surround'
 Plug 'benekastah/neomake'
 Plug 'tpope/vim-commentary'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-repeat'
 Plug 'matchit.zip'
 Plug 'junegunn/vim-easy-align'
@@ -23,6 +22,8 @@ Plug 'jeetsukumaran/vim-filebeagle'
 Plug 'marijnh/tern_for_vim'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'gabesoft/vim-ags'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 
 " Colorschemes
 Plug 'flazz/vim-colorschemes'
@@ -192,7 +193,9 @@ noremap [ :lprev<CR>
 noremap ] :lnext<CR>
 
 " Searching using Ctrl+P
-map <Leader>o :CtrlPMixed<CR>
+map <Leader><space> :GitFiles<CR>
+map <Leader>p :GitFiles<CR>
+map <Leader>a :Ag<CR>
 
 " Quick netrw
 map <Leader>t :Tex<CR>
@@ -236,12 +239,11 @@ let g:SimpleJsIndenter_BriefMode=1
 let g:netrw_list_hide='.DS_Store,^\.git/$'
 
 " Set the working directory to the nearest ancestor .git directory
-let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_working_path_mode = 'c'
 
 " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
 let g:ctrlp_user_command='ag %s -l -i --nocolor -g ""'
 let g:ctrlp_use_caching = 0
-let g:ctrlp_cmd = 'CtrlPLastMode'
 let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
 
 " Check syntax on save
