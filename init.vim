@@ -4,17 +4,62 @@ call plug#begin('~/.vim/plugged')
 
 " Bundles
 Plug 'Raimondi/delimitMate'
+  " Expand delimitmate
+  let delimitMate_expand_cr=1
+  let delimitMate_expand_space=1
+
 Plug 'bling/vim-airline'
+  let g:airline_powerline_fonts=1
+  " Statusline customization
+  let g:airline_section_b = ''
+  let g:airline_section_y = ''
+  let g:airline_section_z = ''
+
+Plug 'vim-airline/vim-airline-themes'
+  let g:airline_theme='solarized'
+
 Plug 'tpope/vim-surround'
 Plug 'benekastah/neomake'
+  " Check syntax on save
+  autocmd BufWritePost * Neomake
+  " Open the error list when errors are present
+  let g:neomake_open_list = 2
+
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'matchit.zip'
 Plug 'junegunn/vim-easy-align'
+  " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+  vmap <Enter> <Plug>(EasyAlign)
+  " Start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
+  nmap <Leader>a <Plug>(EasyAlign)
+
 Plug 'kshenoy/vim-signature'
 Plug 'airblade/vim-gitgutter'
+
 Plug 'tpope/vim-fugitive'
+  nnoremap <leader>ga :Git add %:p<CR><CR>
+  nnoremap <leader>gs :Gstatus<CR>
+  nnoremap <leader>gc :Gcommit -v -q<CR>
+  nnoremap <leader>gt :Gcommit -v -q %:p<CR>
+  nnoremap <leader>gd :Gdiff<CR>
+  nnoremap <leader>ge :Gedit<CR>
+  nnoremap <leader>gr :Gread<CR>
+  nnoremap <leader>gw :Gwrite<CR><CR>
+  nnoremap <leader>gl :silent! Glog<CR>:bot copen<CR>
+  nnoremap <leader>gp :Ggrep<Space>
+  nnoremap <leader>gm :Gmove<Space>
+  nnoremap <leader>gb :Git branch<Space>
+  nnoremap <leader>go :Git checkout<Space>
+  nnoremap <leader>gps :Dispatch! git push<CR>
+  nnoremap <leader>gpl :Dispatch! git pull<CR>
+
 Plug 'jeetsukumaran/vim-filebeagle'
+  command! Tex :tabnew | :FileBeagle
+  command! Sex :split | :FileBeagle
+  command! Vex :vsplit | :FileBeagle
+  command! Exp :FileBeagle
+
 Plug 'marijnh/tern_for_vim', { 'do': '/usr/local/bin/npm install' }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'gabesoft/vim-ags'
@@ -23,7 +68,6 @@ Plug 'junegunn/fzf.vim'
 
 " Colorschemes
 Plug 'frankier/neovim-colors-solarized-truecolor-only'
-Plug 'vim-airline/vim-airline-themes'
 
 " Syntax plugins
 Plug 'hail2u/vim-css3-syntax'
@@ -32,6 +76,8 @@ Plug 'tpope/vim-markdown', { 'for': 'md' }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'othree/javascript-libraries-syntax.vim'
+  let g:used_javascript_libs = "underscore,backbone,react,jquery,requirejs,handlebars"
+
 Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'jnwhiteh/vim-golang', { 'for': 'go' }
 Plug 'evanmiller/nginx-vim-syntax'
@@ -41,23 +87,14 @@ Plug 'digitaltoad/vim-pug'
 " Add plugins to &runtimepath
 call plug#end()
 
-" Some kind of security thing
-set modelines=0
-
-" Declare which JS libs we want syntax highlighting for
-let g:used_javascript_libs = "underscore,backbone,react,jquery,requirejs,handlebars"
-
-" Default spelling language
-set spell spelllang=en_us
-
-" Use true colors
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
 " Set the colorscheme
 colorscheme solarized
 
-" Airline theme
-let g:airline_theme='solarized'
+" Some kind of security thing
+set modelines=0
+
+" Use true colors
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " Set the colorscheme to dark mode
 set background=dark
@@ -71,11 +108,8 @@ syntax enable
 " Set our mapleader key
 let mapleader = "\<Space>"
 
-" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
-vmap <Enter> <Plug>(EasyAlign)
-
-" Start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
-nmap <Leader>a <Plug>(EasyAlign)
+" Bind jj to escape in insert mode for easier escapes
+inoremap jj <Esc>
 
 " Save with an easy shortcut
 nnoremap <Leader>w :w<CR>
@@ -181,7 +215,6 @@ nnoremap <Leader>9 9gt<CR>
 nnoremap <Leader>0 :tablast<CR>
 
 " Jumping around errors
-" let g:syntastic_always_populate_loc_list = 1
 noremap [ :lprev<CR>
 noremap ] :lnext<CR>
 
@@ -199,15 +232,8 @@ map <Leader>s :Sex<CR>
 " Quick refresh
 map <Leader>r :so $MYVIMRC<CR>
 
-" Add a semicolon to the end of the line
-" nnoremap <Leader>; <C-o>A;
-" nnoremap <Leader>; A;<esc>;
-
 " Disable Ex mode
 map Q <ESC>
-
-" Allow slimline to use powerline fonts
-let g:airline_powerline_fonts=1
 
 " Prevent goofy backup files
 set nobackup
@@ -218,38 +244,6 @@ set noswapfile
 " Prevent double save
 set nowritebackup
 
-" Expand delimitmate
-let delimitMate_expand_cr=1
-let delimitMate_expand_space=1
-
-" Do syntax check when the buffer is first loaded
-" let g:syntastic_check_on_open=1
-
-" Don't overindent javascript
-let g:SimpleJsIndenter_BriefMode=1
-
-" Hide .DS_Store and .git directories from Vim
-let g:netrw_list_hide='.DS_Store,^\.git/$'
-
-" Set the working directory to the nearest ancestor .git directory
-let g:ctrlp_working_path_mode = 'c'
-
-" Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-let g:ctrlp_user_command='ag %s -l -i --nocolor -g ""'
-let g:ctrlp_use_caching = 0
-let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
-
-" Check syntax on save
-autocmd BufWritePost * Neomake
-
-" Open the error list automatically
-let g:neomake_open_list = 2
-
-command! Tex :tabnew | :FileBeagle
-command! Sex :split | :FileBeagle
-command! Vex :vsplit | :FileBeagle
-command! Exp :FileBeagle
-
 " Open vertical splits to the right by default
 set splitbelow
 set splitright
@@ -259,25 +253,3 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 nnoremap <c-h> <c-w>h
-
-" Statusline customization
-let g:airline_section_b = ''
-let g:airline_section_y = ''
-let g:airline_section_z = ''
-
-" fugitive git bindings
-nnoremap <leader>ga :Git add %:p<CR><CR>
-nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gc :Gcommit -v -q<CR>
-nnoremap <leader>gt :Gcommit -v -q %:p<CR>
-nnoremap <leader>gd :Gdiff<CR>
-nnoremap <leader>ge :Gedit<CR>
-nnoremap <leader>gr :Gread<CR>
-nnoremap <leader>gw :Gwrite<CR><CR>
-nnoremap <leader>gl :silent! Glog<CR>:bot copen<CR>
-nnoremap <leader>gp :Ggrep<Space>
-nnoremap <leader>gm :Gmove<Space>
-nnoremap <leader>gb :Git branch<Space>
-nnoremap <leader>go :Git checkout<Space>
-nnoremap <leader>gps :Dispatch! git push<CR>
-nnoremap <leader>gpl :Dispatch! git pull<CR>
