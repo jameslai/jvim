@@ -8,17 +8,10 @@ Plug 'Raimondi/delimitMate'
   let delimitMate_expand_cr=1
   let delimitMate_expand_space=1
 
+Plug 'docunext/closetag.vim'
 Plug 'airblade/vim-rooter'
-
-Plug 'bling/vim-airline'
-  let g:airline_powerline_fonts=1
-  " Statusline customization
-  let g:airline_section_b = ''
-  let g:airline_section_y = ''
-  let g:airline_section_z = ''
-
-Plug 'vim-airline/vim-airline-themes'
-  let g:airline_theme='solarized'
+Plug 'mhinz/vim-sayonara'
+Plug 'leafgarland/typescript-vim'
 
 Plug 'tpope/vim-surround'
 Plug 'benekastah/neomake'
@@ -28,6 +21,7 @@ Plug 'benekastah/neomake'
   let g:neomake_open_list = 2
   let g:neomake_jsx_enabled_makers = ["eslint"]
   let g:neomake_javascript_enabled_makers = ["eslint"]
+  let g:neomake_typescript_enabled_makers = []
 
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
@@ -98,7 +92,8 @@ colorscheme solarized
 set modelines=0
 
 " Use true colors
-set termguicolors
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+" set termguicolors
 
 " Set the colorscheme to dark mode
 set background=dark
@@ -119,7 +114,10 @@ inoremap jj <Esc>
 nnoremap <Leader>w :w<CR>
 
 " Quit with an easy shortcut
-nnoremap <Leader>q :q<CR>
+nnoremap <Leader>q :Sayonara<CR>
+
+" Close the file, leave the window/split
+nnoremap <Leader>c :Sayonara!<CR>
 
 " Copy & paste to the system clipboard with <leader>y||p
 vmap <leader>y "+y
