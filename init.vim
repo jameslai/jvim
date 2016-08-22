@@ -101,6 +101,9 @@ set background=dark
 " Automatically reload on file changes
 set autoread
 
+" Display the 100th column
+set colorcolumn=100
+
 " Enable syntax
 syntax enable
 
