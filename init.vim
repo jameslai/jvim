@@ -66,6 +66,7 @@ Plug 'junegunn/fzf.vim'
 
 " Colorschemes
 Plug 'frankier/neovim-colors-solarized-truecolor-only'
+Plug 'junegunn/seoul256.vim'
 
 " Syntax plugins
 Plug 'hail2u/vim-css3-syntax'
@@ -86,7 +87,8 @@ Plug 'digitaltoad/vim-pug'
 call plug#end()
 
 " Set the colorscheme
-colorscheme solarized
+colorscheme seoul256
+let g:seoul256_background = 235
 
 " Some kind of security thing
 set modelines=0
