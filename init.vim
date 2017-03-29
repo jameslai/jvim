@@ -1,5 +1,8 @@
 set shell=/bin/bash
 
+let g:python_host_prog = "/usr/local/bin/python"
+let g:python3_host_prog = "/usr/local/bin/python3"
+
 call plug#begin('~/.vim/plugged')
 
 " Bundles
@@ -61,12 +64,14 @@ Plug 'jeetsukumaran/vim-filebeagle'
 
 Plug 'Shougo/deoplete.nvim'
 Plug 'marijnh/tern_for_vim', { 'do': '/usr/local/bin/npm install' }
+Plug 'gabesoft/vim-ags'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
 " Colorschemes
 Plug 'frankier/neovim-colors-solarized-truecolor-only'
 Plug 'junegunn/seoul256.vim'
+Plug 'jacoborus/tender.vim'
 
 " Syntax plugins
 Plug 'hail2u/vim-css3-syntax'
@@ -85,6 +90,28 @@ Plug 'digitaltoad/vim-pug'
 
 " Add plugins to &runtimepath
 call plug#end()
+
+
+if !exists('g:deoplete#omni#input_patterns')
+  let g:deoplete#omni#input_patterns = {}
+endif
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+augroup omnifuncs
+  autocmd!
+  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType javascript.jsx setlocal omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+augroup end
+if exists('g:plugs["tern_for_vim"]')
+  let g:tern_show_argument_hints = 'on_hold'
+  let g:tern_show_signature_in_pum = 1
+  autocmd FileType javascript setlocal omnifunc=tern#Complete
+endif
+" deoplete tab-complete
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " Set the colorscheme
 colorscheme seoul256
@@ -226,18 +253,21 @@ noremap [ :lprev<CR>
 noremap ] :lnext<CR>
 
 " Searching using Ctrl+P
-map <Leader><space> :GitFiles<CR>
-map <Leader>p :GitFiles<CR>
-map <Leader>a :Ag<CR>
+noremap <Leader><space> :GitFiles<CR>
+noremap <Leader>p :GitFiles<CR>
+noremap <Leader>F :Ag<CR>
+noremap <Leader>* :Ag <C-R><C-W><CR>
+
 
 " Quick netrw
-map <Leader>t :Tex<CR>
-map <Leader>e :Exp<CR>
-map <Leader>v :Vex<CR>
-map <Leader>s :Sex<CR>
+noremap <Leader>t :Tex<CR>
+noremap <Leader>e :Exp<CR>
+noremap <Leader>v :Vex<CR>
+noremap <Leader>s :Sex<CR>
 
 " Quick refresh
-map <Leader>r :so $MYVIMRC<CR>
+noremap <Leader>r :so $MYVIMRC<CR>
+noremap <Leader>e :tabe $MYVIMRC<CR>
 
 " Disable Ex mode
 map Q <ESC>
