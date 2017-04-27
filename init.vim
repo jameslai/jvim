@@ -146,8 +146,10 @@ nnoremap <Leader>q :Sayonara<CR>
 nnoremap <Leader>c :Sayonara!<CR>
 
 " Copy & paste to the system clipboard with <leader>y||p
-vmap <leader>y "+y
-vmap <leader>p "+p
+nnoremap <leader>y "+y
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+vnoremap <leader>p "+p
 
 " Tab rules
 set expandtab
