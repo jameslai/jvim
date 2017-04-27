@@ -14,7 +14,6 @@ Plug 'Raimondi/delimitMate'
 Plug 'docunext/closetag.vim'
 Plug 'airblade/vim-rooter'
 Plug 'mhinz/vim-sayonara'
-Plug 'leafgarland/typescript-vim'
 Plug 'int3/vim-extradite'
 
 Plug 'tpope/vim-surround'
@@ -66,12 +65,15 @@ Plug 'jacoborus/tender.vim'
 
 " Syntax plugins
 Plug 'hail2u/vim-css3-syntax'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'mhartington/nvim-typescript'
 Plug 'othree/html5-syntax.vim'
 Plug 'tpope/vim-markdown', { 'for': 'md' }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'othree/javascript-libraries-syntax.vim'
   let g:used_javascript_libs = "underscore,backbone,react,jquery,requirejs,handlebars"
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'jnwhiteh/vim-golang', { 'for': 'go' }
@@ -103,6 +105,7 @@ if exists('g:plugs["tern_for_vim"]')
 endif
 " deoplete tab-complete
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+let g:deoplete#enable_at_startup = 1
 
 " Set the colorscheme
 colorscheme seoul256
