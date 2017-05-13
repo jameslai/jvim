@@ -59,9 +59,8 @@ Plug 'jeetsukumaran/vim-filebeagle'
   command! Vex :vsplit | :FileBeagle
   command! Exp :FileBeagle
 
+Plug 'Shougo/deoplete.nvim'
 Plug 'marijnh/tern_for_vim', { 'do': '/usr/local/bin/npm install' }
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
-Plug 'gabesoft/vim-ags'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
@@ -261,3 +260,6 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 nnoremap <c-h> <c-w>h
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
