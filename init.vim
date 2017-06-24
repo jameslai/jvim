@@ -257,9 +257,10 @@ nnoremap <Leader>0 :tablast<CR>
 noremap [ :lprev<CR>
 noremap ] :lnext<CR>
 
+" FZF's Ag command should not search the filename, only the content
+command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
 " Searching using Ctrl+P
 noremap <Leader><space> :GitFiles<CR>
-noremap <Leader>p :GitFiles<CR>
 noremap <Leader>F :Ag<CR>
 noremap <Leader>* :Ag <C-R><C-W><CR>
 
