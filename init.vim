@@ -25,10 +25,9 @@ Plug 'benekastah/neomake'
   let g:neomake_jsx_enabled_makers = ["eslint"]
   let g:neomake_javascript_enabled_makers = ["eslint"]
   let g:neomake_typescript_enabled_makers = []
-
+  
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
-Plug 'matchit.zip'
 Plug 'junegunn/vim-easy-align'
   " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
   vmap <Enter> <Plug>(EasyAlign)
