@@ -106,6 +106,16 @@ endif
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 let g:deoplete#enable_at_startup = 1
 
+" Cleaner eslint error messages
+function! neomake#makers#ft#javascript#eslint()
+    return {
+        \ 'args': ['-f', 'compact'],
+        \ 'errorformat': '%f: line %l\, col %c\, Error - %m,' .
+        \ '%W%f: line %l\, col %c\, Warning - %m'
+        \ }
+endfunction
+
+
 " Set the colorscheme
 colorscheme seoul256
 let g:seoul256_background = 235
