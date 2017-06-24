@@ -15,7 +15,7 @@ Plug 'docunext/closetag.vim'
 Plug 'airblade/vim-rooter'
 Plug 'mhinz/vim-sayonara'
 Plug 'int3/vim-extradite'
-
+Plug 'AndrewRadev/linediff.vim'
 Plug 'tpope/vim-surround'
 Plug 'benekastah/neomake'
   " Check syntax on save
