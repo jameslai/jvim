@@ -51,8 +51,6 @@ Plug 'jeetsukumaran/vim-filebeagle'
   command! Vex :vsplit | :FileBeagle
   command! Exp :FileBeagle
 
-Plug 'Shougo/deoplete.nvim'
-Plug 'marijnh/tern_for_vim', { 'do': '/usr/local/bin/npm install' }
 Plug 'gabesoft/vim-ags'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
@@ -68,43 +66,45 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript'
 Plug 'othree/html5-syntax.vim'
 Plug 'tpope/vim-markdown', { 'for': 'md' }
-Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'othree/yajs.vim'
+Plug 'othree/es.next.syntax.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
-  let g:used_javascript_libs = "underscore,backbone,react,jquery,requirejs,handlebars"
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
 Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'jnwhiteh/vim-golang', { 'for': 'go' }
 Plug 'evanmiller/nginx-vim-syntax'
-Plug 'mxw/vim-jsx'
-Plug 'digitaltoad/vim-pug'
+
+" Autocomplete
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'ervandew/supertab'
+Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
+Plug '1995eaton/vim-better-javascript-completion'
 
 " Add plugins to &runtimepath
 call plug#end()
 
+let g:used_javascript_libs = "underscore,backbone,react,jquery"
 
 if !exists('g:deoplete#omni#input_patterns')
   let g:deoplete#omni#input_patterns = {}
 endif
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-augroup omnifuncs
-  autocmd!
-  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-  autocmd FileType javascript.jsx setlocal omnifunc=javascriptcomplete#CompleteJS
-  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-augroup end
-if exists('g:plugs["tern_for_vim"]')
-  let g:tern_show_argument_hints = 'on_hold'
-  let g:tern_show_signature_in_pum = 1
-  autocmd FileType javascript setlocal omnifunc=tern#Complete
-endif
-" deoplete tab-complete
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+
 let g:deoplete#enable_at_startup = 1
+
+let g:deoplete#omni#functions = {}
+let g:deoplete#omni#functions.javascript = ['tern#Complete', 'jspc#omni']
+
+set completeopt=longest,menuone,preview
+let g:deoplete#sources = {}
+let g:deoplete#sources['javascript'] = ['file', 'jspc', 'ternjs']
+let g:deoplete#sources['javascript.jsx'] = ['file', 'jspc', 'ternjs']
+let g:tern#command = ['tern']
+let g:tern#arguments = ['--persistent']
+set completeopt-=preview
+
+autocmd FileType javascript let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Cleaner eslint error messages
 function! neomake#makers#ft#javascript#eslint()
