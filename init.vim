@@ -15,6 +15,7 @@ Plug 'docunext/closetag.vim'
 Plug 'airblade/vim-rooter'
 Plug 'mhinz/vim-sayonara'
 Plug 'int3/vim-extradite'
+Plug 'haya14busa/incsearch.vim'
 Plug 'AndrewRadev/linediff.vim'
 Plug 'tpope/vim-surround'
 Plug 'benekastah/neomake'
@@ -103,7 +104,7 @@ let g:tern#command = ['tern']
 let g:tern#arguments = ['--persistent']
 set completeopt-=preview
 
-autocmd FileType javascript let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+let g:SuperTabDefaultCompletionType = "<c-n>"
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Cleaner eslint error messages
