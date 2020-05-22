@@ -1,52 +1,47 @@
-# James' Vim Configuration
+A nice vim configuration
 
-This Vim configuration utilizes the vundle package manager for automatic bundle management.
+# Installation
 
-## Getting started
+1. Clone this repository
+2. make
 
-1. Clone this repository into ~/.vim
-2. Symlink ~/.vimrc to ~/.vim/vimrc
-3. Launch vim, and run the Ex command :BundleInstall
+# Usage
 
-## Included Bundles
+* Leader is mapped to the space bar
+* `<Leader><Leader>` Search file content in repository
+* `<Leader>p` Search file names in repository
+* `<Leader>*` Search file content for word under cursor
+* `<Leader>]` Next tab
+* `<Leader>[` Previous tab
 
-### Align
-Align and AlignMaps lets you align statements on their equal
-signs, make comment boxes, align comments, align declarations, etc. 
+# Plugins
 
-### delimitMate
-Automatic closing of quotes, parenthesis and brackets.
+## coc.vim
+Intellisense engine for vim
 
-### Powerline
-Better vim status lines.
+## delimitMate
+Auto-completion for quotes, parens, brackets, etc
 
-### Rooter
-Change your working directory to the project root when you open
-a file.
+## dracula
+The best colorscheme
 
-### Surround
-Adds motion of "surround" to add, delete or manipulate surroundings.
+## fzf.vim and fzf
+Fuzzy file search
 
-### Commentary
-Manage comments for all manner of filetypes. `gcc` to toggle
-commenting on the current line (accepts a motion), `gc` in visual
-mode to toggle commenting on a block.
+## vim-airline
+Lightweight status/tabline
 
-### ctrlp.vim
-Full path file, buffer, mru, tag searching. `<c-p>` to open.
+## vim-commentary
+Comment code
 
-### SuperTab
-Insert mode competition. Just press `tab`.
+## vim-polyglot
+Syntax highlighting for multiple languages
 
-### Repeat
-Repeat more than just native commands.
+## vim-rooter
+Find the version control root of the current file
 
-### Yaifa
-Automatically detect the indent settings when you open a file.
+## vim-sleuth
+Auto-detect document indentation
 
-### CSSComb
-Sort CSS properties based on box-model, out to in. Use `:CSSComb`.
-
-### Zen Coding
-https://code.google.com/p/zen-coding/
-Turn `ul.list>li*3` into HTML with `<c-y>,`.
+## vim-surround
+Surround things

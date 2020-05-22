@@ -22,3 +22,12 @@
 [submodule "plugins/start/vim-polyglot"]
 	path = plugins/start/vim-polyglot
 	url = git@github.com:sheerun/vim-polyglot.git
+[submodule "plugins/start/fzf.vim"]
+	path = plugins/start/fzf.vim
+	url = git@github.com:junegunn/fzf.vim.git
+[submodule "plugins/start/fzf"]
+	path = plugins/start/fzf
+	url = git@github.com:junegunn/fzf.git
+[submodule "plugins/start/vim-rooter"]
+	path = plugins/start/vim-rooter
+	url = git@github.com:airblade/vim-rooter.git

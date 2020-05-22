@@ -70,6 +70,21 @@ let g:syntastic_check_on_wq = 0
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 
+" FZF
+"-------------------------------------------
+
+" Custom ripgrep implementation letting us search file contents quickly
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
+    let initial_command = printf(command_fmt, shellescape(a:query))
+      let reload_command = printf(command_fmt, '{q}')
+        let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+          call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+        endfunction
+
+        command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
+
+
 """"""""""""""""""""""""""""""""""""""""""""
 " Theme overrides
 """"""""""""""""""""""""""""""""""""""""""""
@@ -87,6 +102,15 @@ let mapleader = " "
 
 " Disable Ex mode
 map Q <esc>
+
+" Search contents of files in project
+nnoremap <Leader><Leader> :RG<cr>
+
+" Search by filename of project
+nnoremap <Leader>p :GFiles<cr>
+
+" Search for word under cursor
+nnoremap <expr> <Leader>* ':RG '.expand('<cword>').'<cr>'
 
 " Easy tab switching
 nnoremap <Leader>] :tabn<cr>
