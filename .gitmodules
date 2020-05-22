@@ -1,0 +1,24 @@
+[submodule "plugins/start/delimitMate"]
+	path = plugins/start/delimitMate
+	url = git@github.com:Raimondi/delimitMate.git
+[submodule "plugins/start/vim-airline"]
+	path = plugins/start/vim-airline
+	url = git@github.com:vim-airline/vim-airline.git
+[submodule "plugins/start/vim-surround"]
+	path = plugins/start/vim-surround
+	url = git@github.com:tpope/vim-surround.git
+[submodule "plugins/start/vim-commentary"]
+	path = plugins/start/vim-commentary
+	url = git@github.com:tpope/vim-commentary.git
+[submodule "plugins/start/vim-sleuth"]
+	path = plugins/start/vim-sleuth
+	url = git@github.com:tpope/vim-sleuth.git
+[submodule "plugins/start/rainbow"]
+	path = plugins/start/rainbow
+	url = git@github.com:luochen1990/rainbow.git
+[submodule "plugins/start/dracula"]
+	path = plugins/start/dracula
+	url = https://github.com/dracula/vim.git
+[submodule "plugins/start/vim-polyglot"]
+	path = plugins/start/vim-polyglot
+	url = git@github.com:sheerun/vim-polyglot.git

@@ -1,5 +1,2 @@
-.netrwbook
-.netrwhist
 .DS_Store
-plugged
-spell/*
+coc.nvim-release/
